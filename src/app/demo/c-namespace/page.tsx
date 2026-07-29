@@ -1,7 +1,7 @@
-import * as yfun-api from "yfun-api";
+import * as yfunApi from "yfun-api";
 
 export default async function DemoCNamespace() {
-  const ticker = new yfun-api.Ticker("AAPL");
+  const ticker = new yfunApi.Ticker("AAPL");
   const info = await ticker.info();
   
   return (

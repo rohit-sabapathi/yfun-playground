@@ -19,8 +19,8 @@ export async function testServerAction() {
 export async function testDynamicImport() {
   const start = performance.now();
   try {
-    const yfun-api = await import("yfun-api");
-    const ticker = new yfun-api.Ticker("AAPL");
+    const yfunApi = await import("yfun-api");
+    const ticker = new yfunApi.Ticker("AAPL");
     await ticker.info();
     const end = performance.now();
     return { success: true, duration: end - start };
@@ -35,8 +35,8 @@ export async function testCommonJS() {
   try {
     // In Next.js App router (which uses webpack/turbopack), require may be polyfilled or aliased,
     // but it still executes the CJS export path if configured correctly.
-    const yfun-api = require("yfun-api");
-    const ticker = new yfun-api.Ticker("AAPL");
+    const yfunApi = require("yfun-api");
+    const ticker = new yfunApi.Ticker("AAPL");
     await ticker.info();
     const end = performance.now();
     return { success: true, duration: end - start };
