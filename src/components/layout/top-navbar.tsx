@@ -10,8 +10,6 @@ export function TopNavbar() {
   const { selectedTicker, setSelectedTicker } = usePlayground()
   const [mounted, setMounted] = useState(false)
 
-  // Avoid hydration mismatch
-  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), [])
 
   return (
@@ -26,15 +24,19 @@ export function TopNavbar() {
       <div className="flex-1 max-w-xl">
         <div className="relative">
           <Search
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none"
             style={{ color: "var(--muted-foreground)" }}
           />
           <input
             id="ticker-search"
             type="text"
-            placeholder="   Search tickers, commands..."
-            className="nb-input pl-10 pr-20 h-10 uppercase text-sm font-mono"
-            style={{ fontFamily: "var(--font-mono)" }}
+            placeholder="Search tickers, commands..."
+            className="nb-input h-10 uppercase text-sm font-mono w-full"
+            style={{
+              fontFamily: "var(--font-mono)",
+              paddingLeft: "2.5rem",
+              paddingRight: "5rem",
+            }}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 const target = e.target as HTMLInputElement
@@ -61,7 +63,6 @@ export function TopNavbar() {
 
       {/* Right side */}
       <div className="flex items-center gap-3 ml-4">
-        {/* Active ticker badge */}
         {selectedTicker && (
           <div
             className="hidden md:flex items-center gap-2 px-3 py-1.5"
@@ -86,7 +87,6 @@ export function TopNavbar() {
           </div>
         )}
 
-        {/* Theme toggle */}
         <button
           id="theme-toggle"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
