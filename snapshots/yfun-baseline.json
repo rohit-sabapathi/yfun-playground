@@ -1,0 +1,1317 @@
+{
+  "search": {
+    "explains": [],
+    "count": 7,
+    "quotes": [
+      {
+        "exchange": "NMS",
+        "shortname": "Apple Inc.",
+        "quoteType": "EQUITY",
+        "symbol": "AAPL",
+        "index": "quotes",
+        "score": 14442000,
+        "typeDisp": "Equity",
+        "longname": "Apple Inc.",
+        "exchDisp": "NASDAQ",
+        "sector": "Technology",
+        "sectorDisp": "Technology",
+        "industry": "Consumer Electronics",
+        "industryDisp": "Consumer Electronics",
+        "dispSecIndFlag": true,
+        "isYahooFinance": true
+      },
+      {
+        "exchange": "BUE",
+        "shortname": "APPLE INC CEDEAR(REPR 1/20 SHR)",
+        "quoteType": "EQUITY",
+        "symbol": "AAPLC.BA",
+        "index": "quotes",
+        "score": 20003,
+        "typeDisp": "Equity",
+        "exchDisp": "Buenos Aires",
+        "isYahooFinance": true
+      },
+      {
+        "exchange": "SET",
+        "shortname": "AAPL19_DR AAPL#YUANTA",
+        "quoteType": "EQUITY",
+        "symbol": "AAPL19.BK",
+        "index": "quotes",
+        "score": 20003,
+        "typeDisp": "Equity",
+        "longname": "Apple Inc.",
+        "exchDisp": "SET",
+        "sector": "Technology",
+        "sectorDisp": "Technology",
+        "industry": "Consumer Electronics",
+        "industryDisp": "Consumer Electronics",
+        "isYahooFinance": true
+      },
+      {
+        "exchange": "BUE",
+        "shortname": "APPLE INC CEDEAR(REPR 1/20 SHR)",
+        "quoteType": "EQUITY",
+        "symbol": "AAPL.BA",
+        "index": "quotes",
+        "score": 20003,
+        "typeDisp": "Equity",
+        "longname": "Apple Inc.",
+        "exchDisp": "Buenos Aires",
+        "sector": "Technology",
+        "sectorDisp": "Technology",
+        "industry": "Consumer Electronics",
+        "industryDisp": "Consumer Electronics",
+        "isYahooFinance": true
+      },
+      {
+        "exchange": "EBS",
+        "shortname": "IVZ NASDAQ-100 EW Acc",
+        "quoteType": "ETF",
+        "symbol": "IEWQ.SW",
+        "index": "quotes",
+        "score": 20002,
+        "typeDisp": "ETF",
+        "longname": "AAPL Sep 2026 150.000 put",
+        "exchDisp": "Swiss",
+        "isYahooFinance": true
+      },
+      {
+        "exchange": "NGM",
+        "shortname": "GraniteShares 2x Long AAPL Dail",
+        "quoteType": "ETF",
+        "symbol": "AAPB",
+        "index": "quotes",
+        "score": 20002,
+        "typeDisp": "ETF",
+        "longname": "GraniteShares 2x Long AAPL Daily ETF",
+        "exchDisp": "NASDAQ",
+        "isYahooFinance": true
+      },
+      {
+        "index": "78ddc07626ff4bbcae663e88514c23a0",
+        "name": "AAPlasma",
+        "permalink": "aaplasma",
+        "isYahooFinance": false
+      }
+    ],
+    "news": [],
+    "nav": [],
+    "lists": [],
+    "researchReports": [],
+    "screenerFieldResults": [],
+    "totalTime": 28,
+    "timeTakenForQuotes": 422,
+    "timeTakenForNews": 0,
+    "timeTakenForAlgowatchlist": 400,
+    "timeTakenForPredefinedScreener": 400,
+    "timeTakenForCrunchbase": 400,
+    "timeTakenForNav": 400,
+    "timeTakenForResearchReports": 0,
+    "timeTakenForScreenerField": 0,
+    "timeTakenForCulturalAssets": 0,
+    "timeTakenForSearchLists": 0
+  },
+  "marketSummary": [
+    {
+      "fullExchangeName": "SNP",
+      "symbol": "^GSPC",
+      "gmtOffSetMilliseconds": -14400000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784928395,
+        "fmt": "5:26PM EDT"
+      },
+      "regularMarketChangePercent": {
+        "raw": 0.04967639,
+        "fmt": "0.05%"
+      },
+      "quoteType": "INDEX",
+      "typeDisp": "Index",
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 7408.3,
+        "fmt": "7,408.30"
+      },
+      "exchangeTimezoneName": "America/New_York",
+      "regularMarketChange": {
+        "raw": 3.6801758,
+        "fmt": "3.68"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 0,
+      "firstTradeDateMilliseconds": -1325583000000,
+      "exchangeTimezoneShortName": "EDT",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "customPriceAlertConfidence": "LOW",
+      "regularMarketPrice": {
+        "raw": 7411.98,
+        "fmt": "7,411.98"
+      },
+      "market": "us_market",
+      "quoteSourceName": "Delayed Quote",
+      "priceHint": 2,
+      "exchange": "SNP",
+      "sourceInterval": 15,
+      "shortName": "S&P 500",
+      "region": "US",
+      "triggerable": false,
+      "longName": "S&P 500"
+    },
+    {
+      "fullExchangeName": "DJI",
+      "symbol": "^DJI",
+      "gmtOffSetMilliseconds": -14400000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784928403,
+        "fmt": "5:26PM EDT"
+      },
+      "regularMarketChangePercent": {
+        "raw": 0.45560637,
+        "fmt": "0.46%"
+      },
+      "quoteType": "INDEX",
+      "typeDisp": "Index",
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 51711.65,
+        "fmt": "51,711.65"
+      },
+      "exchangeTimezoneName": "America/New_York",
+      "regularMarketChange": {
+        "raw": 235.60156,
+        "fmt": "235.60"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 0,
+      "firstTradeDateMilliseconds": 694362600000,
+      "exchangeTimezoneShortName": "EDT",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "customPriceAlertConfidence": "LOW",
+      "regularMarketPrice": {
+        "raw": 51947.25,
+        "fmt": "51,947.25"
+      },
+      "market": "us_market",
+      "quoteSourceName": "Delayed Quote",
+      "priceHint": 2,
+      "exchange": "DJI",
+      "sourceInterval": 120,
+      "shortName": "Dow 30",
+      "region": "US",
+      "triggerable": false,
+      "longName": "Dow Jones Industrial Average"
+    },
+    {
+      "fullExchangeName": "Nasdaq GIDS",
+      "symbol": "^IXIC",
+      "gmtOffSetMilliseconds": -14400000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784927759,
+        "fmt": "5:15PM EDT"
+      },
+      "regularMarketChangePercent": {
+        "raw": -0.64392996,
+        "fmt": "-0.64%"
+      },
+      "quoteType": "INDEX",
+      "typeDisp": "Index",
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 25137.693,
+        "fmt": "25,137.69"
+      },
+      "exchangeTimezoneName": "America/New_York",
+      "regularMarketChange": {
+        "raw": -161.86914,
+        "fmt": "-161.87"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 0,
+      "firstTradeDateMilliseconds": 34612200000,
+      "exchangeTimezoneShortName": "EDT",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "customPriceAlertConfidence": "LOW",
+      "regularMarketPrice": {
+        "raw": 24975.824,
+        "fmt": "24,975.82"
+      },
+      "market": "us_market",
+      "quoteSourceName": "Delayed Quote",
+      "priceHint": 2,
+      "exchange": "NIM",
+      "sourceInterval": 15,
+      "shortName": "Nasdaq",
+      "region": "US",
+      "triggerable": false,
+      "longName": "NASDAQ Composite"
+    },
+    {
+      "fullExchangeName": "Chicago Options",
+      "symbol": "^RUT",
+      "gmtOffSetMilliseconds": -14400000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784925012,
+        "fmt": "4:30PM EDT"
+      },
+      "regularMarketChangePercent": {
+        "raw": -0.34569725,
+        "fmt": "-0.35%"
+      },
+      "quoteType": "INDEX",
+      "typeDisp": "Index",
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 2940.1628,
+        "fmt": "2,940.16"
+      },
+      "exchangeTimezoneName": "America/New_York",
+      "regularMarketChange": {
+        "raw": -10.1640625,
+        "fmt": "-10.16"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 15,
+      "firstTradeDateMilliseconds": 558279000000,
+      "exchangeTimezoneShortName": "EDT",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "customPriceAlertConfidence": "LOW",
+      "regularMarketPrice": {
+        "raw": 2929.9988,
+        "fmt": "2,930.00"
+      },
+      "market": "us_market",
+      "quoteSourceName": "Delayed Quote",
+      "priceHint": 2,
+      "exchange": "WCB",
+      "sourceInterval": 15,
+      "shortName": "Russell 2000",
+      "region": "US",
+      "triggerable": false,
+      "longName": " Russell 2000 Index"
+    },
+    {
+      "fullExchangeName": "NY Mercantile",
+      "symbol": "CL=F",
+      "headSymbolAsString": "CL=F",
+      "gmtOffSetMilliseconds": -14400000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784926799,
+        "fmt": "4:59PM EDT"
+      },
+      "regularMarketChangePercent": {
+        "raw": -3.1239882,
+        "fmt": "-3.12%"
+      },
+      "headSymbol": true,
+      "quoteType": "FUTURE",
+      "typeDisp": "Futures",
+      "contractSymbol": false,
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 92.19,
+        "fmt": "92.19"
+      },
+      "exchangeTimezoneName": "America/New_York",
+      "regularMarketChange": {
+        "raw": -2.880005,
+        "fmt": "-2.88"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 10,
+      "firstTradeDateMilliseconds": 967003200000,
+      "exchangeTimezoneShortName": "EDT",
+      "hasPrePostMarketData": false,
+      "customPriceAlertConfidence": "NONE",
+      "marketState": "REGULAR",
+      "regularMarketPrice": {
+        "raw": 89.31,
+        "fmt": "89.31"
+      },
+      "market": "us24_market",
+      "quoteSourceName": "Delayed Quote",
+      "sourceInterval": 30,
+      "exchange": "NYM",
+      "region": "US",
+      "shortName": "Crude Oil",
+      "triggerable": false
+    },
+    {
+      "fullExchangeName": "COMEX",
+      "symbol": "GC=F",
+      "headSymbolAsString": "GC=F",
+      "gmtOffSetMilliseconds": -14400000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784926799,
+        "fmt": "4:59PM EDT"
+      },
+      "regularMarketChangePercent": {
+        "raw": 0.5086193,
+        "fmt": "0.51%"
+      },
+      "headSymbol": true,
+      "quoteType": "FUTURE",
+      "typeDisp": "Futures",
+      "contractSymbol": false,
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 4050.2,
+        "fmt": "4,050.20"
+      },
+      "exchangeTimezoneName": "America/New_York",
+      "regularMarketChange": {
+        "raw": 20.600098,
+        "fmt": "20.60"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 10,
+      "firstTradeDateMilliseconds": 967608000000,
+      "exchangeTimezoneShortName": "EDT",
+      "hasPrePostMarketData": false,
+      "customPriceAlertConfidence": "NONE",
+      "marketState": "REGULAR",
+      "regularMarketPrice": {
+        "raw": 4070.8,
+        "fmt": "4,070.80"
+      },
+      "market": "us24_market",
+      "quoteSourceName": "Delayed Quote",
+      "sourceInterval": 15,
+      "exchange": "CMX",
+      "region": "US",
+      "shortName": "Gold",
+      "triggerable": false
+    },
+    {
+      "fullExchangeName": "COMEX",
+      "symbol": "SI=F",
+      "headSymbolAsString": "SI=F",
+      "gmtOffSetMilliseconds": -14400000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784926795,
+        "fmt": "4:59PM EDT"
+      },
+      "regularMarketChangePercent": {
+        "raw": 1.4675946,
+        "fmt": "1.47%"
+      },
+      "headSymbol": true,
+      "quoteType": "FUTURE",
+      "typeDisp": "Futures",
+      "contractSymbol": false,
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 58.054,
+        "fmt": "58.05"
+      },
+      "exchangeTimezoneName": "America/New_York",
+      "regularMarketChange": {
+        "raw": 0.8519974,
+        "fmt": "0.85"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 10,
+      "firstTradeDateMilliseconds": 967608000000,
+      "exchangeTimezoneShortName": "EDT",
+      "hasPrePostMarketData": false,
+      "customPriceAlertConfidence": "NONE",
+      "marketState": "REGULAR",
+      "regularMarketPrice": {
+        "raw": 58.906,
+        "fmt": "58.91"
+      },
+      "market": "us24_market",
+      "quoteSourceName": "Delayed Quote",
+      "sourceInterval": 15,
+      "exchange": "CMX",
+      "region": "US",
+      "shortName": "Silver",
+      "triggerable": false
+    },
+    {
+      "fullExchangeName": "CCY",
+      "symbol": "EURUSD=X",
+      "gmtOffSetMilliseconds": 3600000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784928561,
+        "fmt": "10:29PM BST"
+      },
+      "regularMarketChangePercent": {
+        "raw": -0.056879006,
+        "fmt": "-0.06%"
+      },
+      "quoteType": "CURRENCY",
+      "typeDisp": "Currency",
+      "tradeable": false,
+      "currency": "USD",
+      "regularMarketPreviousClose": {
+        "raw": 1.1381744,
+        "fmt": "1.1382"
+      },
+      "exchangeTimezoneName": "Europe/London",
+      "regularMarketChange": {
+        "raw": -0.00064742565,
+        "fmt": "-0.0006"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 0,
+      "firstTradeDateMilliseconds": 1070236800000,
+      "exchangeTimezoneShortName": "BST",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "regularMarketPrice": {
+        "raw": 1.137527,
+        "fmt": "1.1375"
+      },
+      "customPriceAlertConfidence": "LOW",
+      "market": "ccy_market",
+      "quoteSourceName": "Delayed Quote",
+      "priceHint": 4,
+      "exchange": "CCY",
+      "sourceInterval": 15,
+      "shortName": "EUR/USD",
+      "region": "US",
+      "triggerable": false,
+      "longName": "EUR/USD"
+    },
+    {
+      "fullExchangeName": "Cboe Indices",
+      "symbol": "^TNX",
+      "gmtOffSetMilliseconds": -18000000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784919593,
+        "fmt": "1:59PM CDT"
+      },
+      "regularMarketChangePercent": {
+        "raw": -0.51031613,
+        "fmt": "-0.51%"
+      },
+      "quoteType": "INDEX",
+      "typeDisp": "Index",
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 4.703,
+        "fmt": "4.7030"
+      },
+      "exchangeTimezoneName": "America/Chicago",
+      "regularMarketChange": {
+        "raw": -0.024000168,
+        "fmt": "-0.0240"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 0,
+      "firstTradeDateMilliseconds": -252326400000,
+      "exchangeTimezoneShortName": "CDT",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "customPriceAlertConfidence": "LOW",
+      "regularMarketPrice": {
+        "raw": 4.679,
+        "fmt": "4.6790"
+      },
+      "market": "usir_market",
+      "priceHint": 4,
+      "exchange": "CGI",
+      "sourceInterval": 15,
+      "shortName": "10-Yr Bond",
+      "region": "US",
+      "triggerable": false,
+      "longName": "CBOE Interest Rate 10 Year T No"
+    },
+    {
+      "fullExchangeName": "CCY",
+      "symbol": "GBPUSD=X",
+      "gmtOffSetMilliseconds": 3600000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1785024381,
+        "fmt": "1:06AM BST"
+      },
+      "regularMarketChangePercent": {
+        "raw": 0.031965084,
+        "fmt": "0.03%"
+      },
+      "quoteType": "CURRENCY",
+      "typeDisp": "Currency",
+      "tradeable": false,
+      "currency": "USD",
+      "regularMarketPreviousClose": {
+        "raw": 1.3316289,
+        "fmt": "1.3316"
+      },
+      "exchangeTimezoneName": "Europe/London",
+      "regularMarketChange": {
+        "raw": 0.00042557716,
+        "fmt": "0.0004"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 0,
+      "firstTradeDateMilliseconds": 1070236800000,
+      "exchangeTimezoneShortName": "BST",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "regularMarketPrice": {
+        "raw": 1.3320545,
+        "fmt": "1.3321"
+      },
+      "customPriceAlertConfidence": "LOW",
+      "market": "ccy_market",
+      "quoteSourceName": "Delayed Quote",
+      "priceHint": 4,
+      "exchange": "CCY",
+      "sourceInterval": 15,
+      "shortName": "GBP/USD",
+      "region": "US",
+      "triggerable": false,
+      "longName": "GBP/USD"
+    },
+    {
+      "fullExchangeName": "CCY",
+      "symbol": "JPY=X",
+      "gmtOffSetMilliseconds": 3600000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784926798,
+        "fmt": "9:59PM BST"
+      },
+      "regularMarketChangePercent": {
+        "raw": 0.017712874,
+        "fmt": "0.02%"
+      },
+      "quoteType": "CURRENCY",
+      "typeDisp": "Currency",
+      "tradeable": false,
+      "currency": "JPY",
+      "regularMarketPreviousClose": {
+        "raw": 163.762,
+        "fmt": "163.7620"
+      },
+      "exchangeTimezoneName": "Europe/London",
+      "regularMarketChange": {
+        "raw": 0.029006958,
+        "fmt": "0.0290"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 0,
+      "firstTradeDateMilliseconds": 846633600000,
+      "exchangeTimezoneShortName": "BST",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "regularMarketPrice": {
+        "raw": 163.791,
+        "fmt": "163.7910"
+      },
+      "customPriceAlertConfidence": "LOW",
+      "market": "ccy_market",
+      "quoteSourceName": "Delayed Quote",
+      "priceHint": 4,
+      "exchange": "CCY",
+      "sourceInterval": 15,
+      "shortName": "USD/JPY",
+      "region": "US",
+      "triggerable": false,
+      "longName": "USD/JPY"
+    },
+    {
+      "fullExchangeName": "CCC",
+      "symbol": "BTC-USD",
+      "gmtOffSetMilliseconds": 0,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784901287,
+        "fmt": "1:54PM UTC"
+      },
+      "regularMarketChangePercent": {
+        "raw": -1.3962467,
+        "fmt": "-1.40%"
+      },
+      "quoteType": "CRYPTOCURRENCY",
+      "typeDisp": "Cryptocurrency",
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 65047.87,
+        "fmt": "65,047.87"
+      },
+      "exchangeTimezoneName": "UTC",
+      "regularMarketChange": {
+        "raw": -905.2031,
+        "fmt": "-905.20"
+      },
+      "cryptoTradeable": true,
+      "exchangeDataDelayedBy": 0,
+      "firstTradeDateMilliseconds": 1410912000000,
+      "exchangeTimezoneShortName": "UTC",
+      "hasPrePostMarketData": false,
+      "marketState": "REGULAR",
+      "customPriceAlertConfidence": "LOW",
+      "regularMarketPrice": {
+        "raw": 63925.97,
+        "fmt": "63,925.97"
+      },
+      "market": "ccc_market",
+      "quoteSourceName": "CoinMarketCap",
+      "exchange": "CCC",
+      "sourceInterval": 15,
+      "shortName": "Bitcoin USD",
+      "region": "US",
+      "triggerable": false,
+      "longName": "Bitcoin USD"
+    },
+    {
+      "fullExchangeName": "CCC",
+      "symbol": "XRP-USD",
+      "gmtOffSetMilliseconds": 0,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784901288,
+        "fmt": "1:54PM UTC"
+      },
+      "regularMarketChangePercent": {
+        "raw": -1.9351927,
+        "fmt": "-1.94%"
+      },
+      "quoteType": "CRYPTOCURRENCY",
+      "typeDisp": "Cryptocurrency",
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 1.106908,
+        "fmt": "1.11"
+      },
+      "exchangeTimezoneName": "UTC",
+      "regularMarketChange": {
+        "raw": -0.021499991,
+        "fmt": "-0.02"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 0,
+      "firstTradeDateMilliseconds": 1510185600000,
+      "exchangeTimezoneShortName": "UTC",
+      "hasPrePostMarketData": false,
+      "marketState": "REGULAR",
+      "customPriceAlertConfidence": "LOW",
+      "regularMarketPrice": {
+        "raw": 1.0895,
+        "fmt": "1.09"
+      },
+      "market": "ccc_market",
+      "quoteSourceName": "CoinMarketCap",
+      "exchange": "CCC",
+      "sourceInterval": 15,
+      "shortName": "XRP USD",
+      "region": "US",
+      "triggerable": false,
+      "longName": "XRP USD"
+    },
+    {
+      "fullExchangeName": "FTSE Index",
+      "symbol": "^FTSE",
+      "gmtOffSetMilliseconds": 3600000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784907330,
+        "fmt": "4:35PM BST"
+      },
+      "regularMarketChangePercent": {
+        "raw": 0.9122943,
+        "fmt": "0.91%"
+      },
+      "quoteType": "INDEX",
+      "typeDisp": "Index",
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 10639.17,
+        "fmt": "10,639.17"
+      },
+      "exchangeTimezoneName": "Europe/London",
+      "regularMarketChange": {
+        "raw": 97.06055,
+        "fmt": "97.06"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 15,
+      "firstTradeDateMilliseconds": 441964800000,
+      "exchangeTimezoneShortName": "BST",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "customPriceAlertConfidence": "LOW",
+      "regularMarketPrice": {
+        "raw": 10736.23,
+        "fmt": "10,736.23"
+      },
+      "market": "gb_market",
+      "quoteSourceName": "Delayed Quote",
+      "priceHint": 2,
+      "exchange": "FGI",
+      "sourceInterval": 15,
+      "shortName": "FTSE 100",
+      "region": "US",
+      "triggerable": false,
+      "longName": "FTSE 100"
+    },
+    {
+      "fullExchangeName": "Osaka",
+      "symbol": "^N225",
+      "gmtOffSetMilliseconds": 32400000,
+      "language": "en-US",
+      "regularMarketTime": {
+        "raw": 1784875503,
+        "fmt": "3:45PM JST"
+      },
+      "regularMarketChangePercent": {
+        "raw": -2.7271638,
+        "fmt": "-2.73%"
+      },
+      "quoteType": "INDEX",
+      "typeDisp": "Index",
+      "tradeable": false,
+      "regularMarketPreviousClose": {
+        "raw": 66422.6,
+        "fmt": "66,422.60"
+      },
+      "exchangeTimezoneName": "Asia/Tokyo",
+      "regularMarketChange": {
+        "raw": -1811.4531,
+        "fmt": "-1,811.45"
+      },
+      "cryptoTradeable": false,
+      "exchangeDataDelayedBy": 20,
+      "firstTradeDateMilliseconds": -157420800000,
+      "exchangeTimezoneShortName": "JST",
+      "hasPrePostMarketData": false,
+      "marketState": "CLOSED",
+      "customPriceAlertConfidence": "LOW",
+      "regularMarketPrice": {
+        "raw": 64611.15,
+        "fmt": "64,611.15"
+      },
+      "market": "jp_market",
+      "quoteSourceName": "Delayed Quote",
+      "priceHint": 2,
+      "exchange": "OSA",
+      "sourceInterval": 20,
+      "shortName": "Nikkei 225",
+      "region": "US",
+      "triggerable": false,
+      "longName": "Nikkei 225"
+    }
+  ],
+  "Ticker.info": {
+    "address1": "One Apple Park Way",
+    "city": "Cupertino",
+    "state": "CA",
+    "zip": "95014",
+    "country": "United States",
+    "phone": "(408) 996-1010",
+    "website": "https://www.apple.com",
+    "industry": "Consumer Electronics",
+    "industryKey": "consumer-electronics",
+    "industryDisp": "Consumer Electronics",
+    "sector": "Technology",
+    "sectorKey": "technology",
+    "sectorDisp": "Technology",
+    "longBusinessSummary": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories comprising AirPods, Apple Vision Pro, Apple TV, Apple Watch, Beats products, and HomePod, as well as Apple branded and third-party accessories. It also provides AppleCare support and cloud services; and operates various platforms, including the App Store that allows customers to discover and download applications and digital content, such as books, music, video, games, and podcasts, as well as advertising services include third-party licensing arrangements and its own advertising platforms. In addition, the company offers various subscription-based services, such as Apple Arcade, a game subscription service; Apple Fitness+, a personalized fitness service; Apple Music, which offers users a curated listening experience with on-demand radio stations; Apple News+, a subscription news and magazine service; Apple TV, which offers original content and live sports; Apple Card, a co-branded credit card; and Apple Pay, a cashless payment service, as well as licenses its intellectual property. The company serves consumers, and small and mid-sized businesses; and the education, enterprise, and government markets. It distributes third-party applications for its products through the App Store. The company also sells its products through its retail and online stores, and direct sales force; and third-party cellular network carriers and resellers. The company was formerly known as Apple Computer, Inc. and changed its name to Apple Inc. in January 2007. Apple Inc. was founded in 1976 and is headquartered in Cupertino, California.",
+    "fullTimeEmployees": 166000,
+    "companyOfficers": [],
+    "auditRisk": 2,
+    "boardRisk": 1,
+    "compensationRisk": 7,
+    "shareHolderRightsRisk": 1,
+    "overallRisk": 1,
+    "governanceEpochDate": 1782864000,
+    "compensationAsOfEpochDate": 1767139200,
+    "irWebsite": "http://investor.apple.com/",
+    "executiveTeam": [],
+    "maxAge": 86400,
+    "priceHint": 2,
+    "previousClose": 321.66,
+    "open": 322.04,
+    "dayLow": 321.62,
+    "dayHigh": 334.37,
+    "regularMarketPreviousClose": 321.66,
+    "regularMarketOpen": 322.04,
+    "regularMarketDayLow": 321.62,
+    "regularMarketDayHigh": 334.37,
+    "dividendRate": 1.08,
+    "dividendYield": 0.0032,
+    "exDividendDate": 1778457600,
+    "payoutRatio": 0.1259,
+    "fiveYearAvgDividendYield": 0.5,
+    "beta": 1.097,
+    "trailingPE": 40.31719,
+    "forwardPE": 34.541164,
+    "volume": 47402209,
+    "regularMarketVolume": 47402209,
+    "averageVolume": 55157951,
+    "averageVolume10days": 48877740,
+    "averageDailyVolume10Day": 48877740,
+    "bid": 318,
+    "ask": 334.98,
+    "bidSize": 200,
+    "askSize": 400,
+    "marketCap": 4891182891008,
+    "nonDilutedMarketCap": 4891183295120,
+    "fiftyTwoWeekLow": 201.5,
+    "fiftyTwoWeekHigh": 334.99,
+    "allTimeHigh": 334.99,
+    "allTimeLow": 0.049107,
+    "priceToSalesTrailing12Months": 10.834576,
+    "fiftyDayAverage": 306.2314,
+    "twoHundredDayAverage": 275.98044,
+    "trailingAnnualDividendRate": 1.04,
+    "trailingAnnualDividendYield": 0.0032332274,
+    "currency": "USD",
+    "fromCurrency": null,
+    "toCurrency": null,
+    "lastMarket": null,
+    "coinMarketCapLink": null,
+    "algorithm": null,
+    "tradeable": false,
+    "preMarketSource": "FREE_REALTIME",
+    "postMarketChangePercent": 0.002342198,
+    "postMarketChange": 0.7799988,
+    "postMarketTime": 1784937588,
+    "postMarketPrice": 333.8,
+    "postMarketSource": "FREE_REALTIME",
+    "regularMarketChangePercent": 0.035316702,
+    "regularMarketChange": 11.36,
+    "regularMarketTime": 1784923201,
+    "regularMarketPrice": 333.02,
+    "averageDailyVolume3Month": 55157951,
+    "regularMarketSource": "FREE_REALTIME",
+    "exchange": "NMS",
+    "exchangeName": "NasdaqGS",
+    "exchangeDataDelayedBy": 0,
+    "marketState": "CLOSED",
+    "quoteType": "EQUITY",
+    "symbol": "AAPL",
+    "underlyingSymbol": "AAPL",
+    "shortName": "Apple Inc.",
+    "longName": "Apple Inc.",
+    "quoteSourceName": "Nasdaq Real Time Price",
+    "currencySymbol": "$",
+    "enterpriseValue": 4907387060224,
+    "profitMargins": 0.27152002,
+    "floatShares": 14662387495,
+    "sharesOutstanding": 14687356000,
+    "sharesShort": 146547784,
+    "sharesShortPriorMonth": 144248476,
+    "sharesShortPreviousMonthDate": 1781481600,
+    "dateShortInterest": 1784073600,
+    "sharesPercentSharesOut": 0.01,
+    "heldPercentInsiders": 0.0163,
+    "heldPercentInstitutions": 0.66499,
+    "shortRatio": 2.28,
+    "shortPercentOfFloat": 0.01,
+    "impliedSharesOutstanding": 14687356000,
+    "category": null,
+    "bookValue": 7.26,
+    "priceToBook": 45.87052,
+    "fundFamily": null,
+    "legalType": null,
+    "lastFiscalYearEnd": 1758931200,
+    "nextFiscalYearEnd": 1790467200,
+    "mostRecentQuarter": 1774656000,
+    "earningsQuarterlyGrowth": 0.194,
+    "netIncomeToCommon": 122575003648,
+    "trailingEps": 8.26,
+    "forwardEps": 9.64125,
+    "pegRatio": 2.59,
+    "lastSplitFactor": "4:1",
+    "lastSplitDate": 1598832000,
+    "enterpriseToRevenue": 10.87,
+    "enterpriseToEbitda": 30.676,
+    "52WeekChange": 0.5558047,
+    "SandP52WeekChange": 0.159976,
+    "lastDividendValue": 0.27,
+    "lastDividendDate": 1778457600,
+    "latestShareClass": null,
+    "leadInvestor": null,
+    "firstTradeDateEpochUtc": 345479400,
+    "timeZoneFullName": "America/New_York",
+    "timeZoneShortName": "EDT",
+    "uuid": "8b10e4ae-9eeb-3684-921a-9ab27e4d87aa",
+    "messageBoardId": "finmb_24937",
+    "gmtOffSetMilliseconds": -14400000,
+    "currentPrice": 333.02,
+    "targetHighPrice": 400,
+    "targetLowPrice": 215,
+    "targetMeanPrice": 318.8093,
+    "targetMedianPrice": 329,
+    "recommendationMean": 2.02128,
+    "recommendationKey": "buy",
+    "numberOfAnalystOpinions": 43,
+    "totalCash": 68507000832,
+    "totalCashPerShare": 4.664,
+    "ebitda": 159975997440,
+    "totalDebt": 84710998016,
+    "quickRatio": 0.906,
+    "currentRatio": 1.07,
+    "totalRevenue": 451442016256,
+    "debtToEquity": 79.548,
+    "revenuePerShare": 30.534,
+    "returnOnAssets": 0.26229,
+    "returnOnEquity": 1.4147099,
+    "grossProfits": 216070995968,
+    "freeCashflow": 101090746368,
+    "operatingCashflow": 140222005248,
+    "earningsGrowth": 0.218,
+    "revenueGrowth": 0.166,
+    "grossMargins": 0.47862,
+    "ebitdaMargins": 0.35437,
+    "operatingMargins": 0.32275,
+    "financialCurrency": "USD"
+  },
+  "Ticker.history": [
+    {
+      "date": "2026-06-25T13:30:00.000Z",
+      "open": 287.3999938964844,
+      "high": 288.79998779296875,
+      "low": 273.75,
+      "close": 275.1499938964844,
+      "volume": 107013700
+    },
+    {
+      "date": "2026-06-26T13:30:00.000Z",
+      "open": 275,
+      "high": 285.95001220703125,
+      "low": 274.2099914550781,
+      "close": 283.7799987792969,
+      "volume": 261775500
+    },
+    {
+      "date": "2026-06-29T13:30:00.000Z",
+      "open": 286.7300109863281,
+      "high": 288.3699951171875,
+      "low": 279.8500061035156,
+      "close": 281.739990234375,
+      "volume": 66427000
+    },
+    {
+      "date": "2026-06-30T13:30:00.000Z",
+      "open": 281.1700134277344,
+      "high": 289.94000244140625,
+      "low": 280.70001220703125,
+      "close": 289.3599853515625,
+      "volume": 65100200
+    },
+    {
+      "date": "2026-07-01T13:30:00.000Z",
+      "open": 293.44000244140625,
+      "high": 296.5899963378906,
+      "low": 289.20001220703125,
+      "close": 294.3800048828125,
+      "volume": 50164200
+    },
+    {
+      "date": "2026-07-02T13:30:00.000Z",
+      "open": 294.1199951171875,
+      "high": 309.4200134277344,
+      "low": 293.67999267578125,
+      "close": 308.6300048828125,
+      "volume": 75352800
+    },
+    {
+      "date": "2026-07-06T13:30:00.000Z",
+      "open": 307.3599853515625,
+      "high": 314.20001220703125,
+      "low": 307,
+      "close": 312.6600036621094,
+      "volume": 53590000
+    },
+    {
+      "date": "2026-07-07T13:30:00.000Z",
+      "open": 315.2900085449219,
+      "high": 315.4800109863281,
+      "low": 310.1499938964844,
+      "close": 310.6600036621094,
+      "volume": 42490000
+    },
+    {
+      "date": "2026-07-08T13:30:00.000Z",
+      "open": 311.9100036621094,
+      "high": 314.82000732421875,
+      "low": 307.04998779296875,
+      "close": 313.3900146484375,
+      "volume": 41323500
+    },
+    {
+      "date": "2026-07-09T13:30:00.000Z",
+      "open": 310.510009765625,
+      "high": 316.5299987792969,
+      "low": 308.1600036621094,
+      "close": 316.2200012207031,
+      "volume": 48124500
+    },
+    {
+      "date": "2026-07-10T13:30:00.000Z",
+      "open": 314.7200012207031,
+      "high": 316.9100036621094,
+      "low": 312.1700134277344,
+      "close": 315.32000732421875,
+      "volume": 34132300
+    },
+    {
+      "date": "2026-07-13T13:30:00.000Z",
+      "open": 317.0199890136719,
+      "high": 323.45001220703125,
+      "low": 315.7799987792969,
+      "close": 317.30999755859375,
+      "volume": 43257800
+    },
+    {
+      "date": "2026-07-14T13:30:00.000Z",
+      "open": 313.760009765625,
+      "high": 316.19000244140625,
+      "low": 311.9100036621094,
+      "close": 314.8599853515625,
+      "volume": 36336800
+    },
+    {
+      "date": "2026-07-15T13:30:00.000Z",
+      "open": 317.6199951171875,
+      "high": 328.7300109863281,
+      "low": 317.32000732421875,
+      "close": 327.5,
+      "volume": 60957600
+    },
+    {
+      "date": "2026-07-16T13:30:00.000Z",
+      "open": 328.010009765625,
+      "high": 334.67999267578125,
+      "low": 326.7900085449219,
+      "close": 333.260009765625,
+      "volume": 62970600
+    },
+    {
+      "date": "2026-07-17T13:30:00.000Z",
+      "open": 331.9800109863281,
+      "high": 334.989990234375,
+      "low": 329,
+      "close": 333.739990234375,
+      "volume": 63407100
+    },
+    {
+      "date": "2026-07-20T13:30:00.000Z",
+      "open": 333.510009765625,
+      "high": 333.7099914550781,
+      "low": 323.67999267578125,
+      "close": 326.5899963378906,
+      "volume": 53468000
+    },
+    {
+      "date": "2026-07-21T13:30:00.000Z",
+      "open": 323.1300048828125,
+      "high": 329.6000061035156,
+      "low": 322.2200012207031,
+      "close": 327.739990234375,
+      "volume": 41338900
+    },
+    {
+      "date": "2026-07-22T13:30:00.000Z",
+      "open": 327.8699951171875,
+      "high": 329,
+      "low": 323.3399963378906,
+      "close": 325.8900146484375,
+      "volume": 38755900
+    },
+    {
+      "date": "2026-07-23T13:30:00.000Z",
+      "open": 321.7300109863281,
+      "high": 323.29998779296875,
+      "low": 319.3500061035156,
+      "close": 321.6600036621094,
+      "volume": 40840800
+    },
+    {
+      "date": "2026-07-24T13:30:00.000Z",
+      "open": 321.7900085449219,
+      "high": 334.3699951171875,
+      "low": 321.6199951171875,
+      "close": 333.0199890136719,
+      "volume": 47443900
+    }
+  ],
+  "download": {
+    "AAPL": [
+      {
+        "date": "2026-06-25T13:30:00.000Z",
+        "open": 287.3999938964844,
+        "high": 288.79998779296875,
+        "low": 273.75,
+        "close": 275.1499938964844,
+        "volume": 107013700
+      },
+      {
+        "date": "2026-06-26T13:30:00.000Z",
+        "open": 275,
+        "high": 285.95001220703125,
+        "low": 274.2099914550781,
+        "close": 283.7799987792969,
+        "volume": 261775500
+      },
+      {
+        "date": "2026-06-29T13:30:00.000Z",
+        "open": 286.7300109863281,
+        "high": 288.3699951171875,
+        "low": 279.8500061035156,
+        "close": 281.739990234375,
+        "volume": 66427000
+      },
+      {
+        "date": "2026-06-30T13:30:00.000Z",
+        "open": 281.1700134277344,
+        "high": 289.94000244140625,
+        "low": 280.70001220703125,
+        "close": 289.3599853515625,
+        "volume": 65100200
+      },
+      {
+        "date": "2026-07-01T13:30:00.000Z",
+        "open": 293.44000244140625,
+        "high": 296.5899963378906,
+        "low": 289.20001220703125,
+        "close": 294.3800048828125,
+        "volume": 50164200
+      },
+      {
+        "date": "2026-07-02T13:30:00.000Z",
+        "open": 294.1199951171875,
+        "high": 309.4200134277344,
+        "low": 293.67999267578125,
+        "close": 308.6300048828125,
+        "volume": 75352800
+      },
+      {
+        "date": "2026-07-06T13:30:00.000Z",
+        "open": 307.3599853515625,
+        "high": 314.20001220703125,
+        "low": 307,
+        "close": 312.6600036621094,
+        "volume": 53590000
+      },
+      {
+        "date": "2026-07-07T13:30:00.000Z",
+        "open": 315.2900085449219,
+        "high": 315.4800109863281,
+        "low": 310.1499938964844,
+        "close": 310.6600036621094,
+        "volume": 42490000
+      },
+      {
+        "date": "2026-07-08T13:30:00.000Z",
+        "open": 311.9100036621094,
+        "high": 314.82000732421875,
+        "low": 307.04998779296875,
+        "close": 313.3900146484375,
+        "volume": 41323500
+      },
+      {
+        "date": "2026-07-09T13:30:00.000Z",
+        "open": 310.510009765625,
+        "high": 316.5299987792969,
+        "low": 308.1600036621094,
+        "close": 316.2200012207031,
+        "volume": 48124500
+      },
+      {
+        "date": "2026-07-10T13:30:00.000Z",
+        "open": 314.7200012207031,
+        "high": 316.9100036621094,
+        "low": 312.1700134277344,
+        "close": 315.32000732421875,
+        "volume": 34132300
+      },
+      {
+        "date": "2026-07-13T13:30:00.000Z",
+        "open": 317.0199890136719,
+        "high": 323.45001220703125,
+        "low": 315.7799987792969,
+        "close": 317.30999755859375,
+        "volume": 43257800
+      },
+      {
+        "date": "2026-07-14T13:30:00.000Z",
+        "open": 313.760009765625,
+        "high": 316.19000244140625,
+        "low": 311.9100036621094,
+        "close": 314.8599853515625,
+        "volume": 36336800
+      },
+      {
+        "date": "2026-07-15T13:30:00.000Z",
+        "open": 317.6199951171875,
+        "high": 328.7300109863281,
+        "low": 317.32000732421875,
+        "close": 327.5,
+        "volume": 60957600
+      },
+      {
+        "date": "2026-07-16T13:30:00.000Z",
+        "open": 328.010009765625,
+        "high": 334.67999267578125,
+        "low": 326.7900085449219,
+        "close": 333.260009765625,
+        "volume": 62970600
+      },
+      {
+        "date": "2026-07-17T13:30:00.000Z",
+        "open": 331.9800109863281,
+        "high": 334.989990234375,
+        "low": 329,
+        "close": 333.739990234375,
+        "volume": 63407100
+      },
+      {
+        "date": "2026-07-20T13:30:00.000Z",
+        "open": 333.510009765625,
+        "high": 333.7099914550781,
+        "low": 323.67999267578125,
+        "close": 326.5899963378906,
+        "volume": 53468000
+      },
+      {
+        "date": "2026-07-21T13:30:00.000Z",
+        "open": 323.1300048828125,
+        "high": 329.6000061035156,
+        "low": 322.2200012207031,
+        "close": 327.739990234375,
+        "volume": 41338900
+      },
+      {
+        "date": "2026-07-22T13:30:00.000Z",
+        "open": 327.8699951171875,
+        "high": 329,
+        "low": 323.3399963378906,
+        "close": 325.8900146484375,
+        "volume": 38755900
+      },
+      {
+        "date": "2026-07-23T13:30:00.000Z",
+        "open": 321.7300109863281,
+        "high": 323.29998779296875,
+        "low": 319.3500061035156,
+        "close": 321.6600036621094,
+        "volume": 40840800
+      },
+      {
+        "date": "2026-07-24T13:30:00.000Z",
+        "open": 321.7900085449219,
+        "high": 334.3699951171875,
+        "low": 321.6199951171875,
+        "close": 333.0199890136719,
+        "volume": 47443900
+      }
+    ]
+  }
+}
