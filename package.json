@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build",
     "build:analyze": "set ANALYZE=true&& next build --webpack",
     "test:regression": "tsx scripts/ci-regression.ts",
     "start": "next start",

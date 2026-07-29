@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Sidebar } from "@/components/layout/sidebar";
 import { TopNavbar } from "@/components/layout/top-navbar";
 import { Footer } from "@/components/layout/footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "yfun-api Testing Terminal",
@@ -30,14 +19,14 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
-      <body className="h-full flex overflow-hidden bg-background text-foreground">
+      <body className="h-full flex overflow-hidden" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
         <Providers>
           <Sidebar />
           <div className="flex-1 flex flex-col min-w-0">
             <TopNavbar />
-            <main className="flex-1 overflow-auto bg-background/50 relative">
+            <main className="flex-1 overflow-auto" style={{ backgroundColor: "var(--background)" }}>
               {children}
             </main>
             <Footer />

@@ -5,12 +5,12 @@ import { CheckCircle, XCircle, AlertTriangle, Loader2, Play } from "lucide-react
 import { testServerAction, testDynamicImport, testCommonJS } from "@/app/runtime-test/actions"
 
 type TestResult = {
-  name: string;
-  description: string;
-  status: "pending" | "running" | "pass" | "fail" | "warn";
-  duration?: number;
-  error?: string;
-  run: () => Promise<{ success: boolean; duration: number; error?: string }>;
+  name: string
+  description: string
+  status: "pending" | "running" | "pass" | "fail" | "warn"
+  duration?: number
+  error?: string
+  run: () => Promise<{ success: boolean; duration: number; error?: string }>
 }
 
 export function TestRunner() {
@@ -19,158 +19,266 @@ export function TestRunner() {
       name: "ESM Imports",
       description: "Standard ECMAScript module imports",
       status: "pending",
-      run: async () => {
-        // Technically ESM is tested via the Route Handlers and Server Components natively.
-        // We will just run the server action which uses ESM import syntax.
-        return testServerAction();
-      }
+      run: async () => testServerAction(),
     },
     {
       name: "CommonJS (CJS)",
       description: "Using require('yfun-api')",
       status: "pending",
-      run: async () => testCommonJS()
+      run: async () => testCommonJS(),
     },
     {
       name: "Dynamic Imports",
       description: "Using await import('yfun-api')",
       status: "pending",
-      run: async () => testDynamicImport()
+      run: async () => testDynamicImport(),
     },
     {
       name: "Server Actions",
       description: "Next.js 'use server' actions",
       status: "pending",
-      run: async () => testServerAction()
+      run: async () => testServerAction(),
     },
     {
       name: "Route Handlers (Node)",
       description: "app/api/... with export const runtime = 'nodejs'",
       status: "pending",
       run: async () => {
-        const start = performance.now();
-        const res = await fetch('/api/runtime/node');
-        const data = await res.json();
-        return { 
-          success: res.ok && data.success, 
+        const start = performance.now()
+        const res = await fetch("/api/runtime/node")
+        const data = await res.json()
+        return {
+          success: res.ok && data.success,
           duration: data.duration || performance.now() - start,
-          error: data.error
-        };
-      }
+          error: data.error,
+        }
+      },
     },
     {
       name: "Edge Compatibility",
       description: "app/api/... with export const runtime = 'edge'",
       status: "pending",
       run: async () => {
-        const start = performance.now();
-        const res = await fetch('/api/runtime/edge');
-        const data = await res.json();
-        return { 
-          success: res.ok && data.success, 
+        const start = performance.now()
+        const res = await fetch("/api/runtime/edge")
+        const data = await res.json()
+        return {
+          success: res.ok && data.success,
           duration: data.duration || performance.now() - start,
-          error: data.error
-        };
-      }
-    }
-  ]);
+          error: data.error,
+        }
+      },
+    },
+  ])
 
-  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning, setIsRunning] = useState(false)
 
   const runAllTests = async () => {
-    setIsRunning(true);
-    
-    // Reset status
-    setTests(prev => prev.map(t => ({ ...t, status: "pending", duration: undefined, error: undefined })));
+    setIsRunning(true)
+    setTests((prev) => prev.map((t) => ({ ...t, status: "pending", duration: undefined, error: undefined })))
 
     for (let i = 0; i < tests.length; i++) {
-      setTests(prev => {
-        const next = [...prev];
-        next[i].status = "running";
-        return next;
-      });
+      setTests((prev) => {
+        const next = [...prev]
+        next[i].status = "running"
+        return next
+      })
 
       try {
-        const result = await tests[i].run();
-        setTests(prev => {
-          const next = [...prev];
-          next[i].status = result.success ? "pass" : "fail";
-          next[i].duration = result.duration;
-          next[i].error = result.error;
-          return next;
-        });
+        const result = await tests[i].run()
+        setTests((prev) => {
+          const next = [...prev]
+          next[i].status = result.success ? "pass" : "fail"
+          next[i].duration = result.duration
+          next[i].error = result.error
+          return next
+        })
       } catch (err: unknown) {
-        setTests(prev => {
-          const next = [...prev];
-          next[i].status = "fail";
-          next[i].error = err instanceof Error ? err.message : String(err);
-          return next;
-        });
+        setTests((prev) => {
+          const next = [...prev]
+          next[i].status = "fail"
+          next[i].error = err instanceof Error ? err.message : String(err)
+          return next
+        })
       }
     }
-    
-    setIsRunning(false);
-  };
+
+    setIsRunning(false)
+  }
 
   useEffect(() => {
-    // Auto run on mount
-    runAllTests();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    runAllTests()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const StatusIcon = ({ status }: { status: string }) => {
-    switch(status) {
-      case "pass": return <CheckCircle className="w-5 h-5 text-green-500" />;
-      case "fail": return <XCircle className="w-5 h-5 text-red-500" />;
-      case "warn": return <AlertTriangle className="w-5 h-5 text-yellow-500" />;
-      case "running": return <Loader2 className="w-5 h-5 text-primary animate-spin" />;
-      default: return <div className="w-5 h-5 rounded-full border-2 border-muted" />;
+    switch (status) {
+      case "pass":
+        return <CheckCircle className="w-5 h-5" style={{ color: "var(--accent-green)" }} />
+      case "fail":
+        return <XCircle className="w-5 h-5" style={{ color: "var(--accent-red)" }} />
+      case "warn":
+        return <AlertTriangle className="w-5 h-5" style={{ color: "var(--accent)" }} />
+      case "running":
+        return <Loader2 className="w-5 h-5 animate-spin" style={{ color: "var(--accent-blue)" }} />
+      default:
+        return (
+          <div
+            className="w-5 h-5"
+            style={{ border: "2px solid var(--border-color)", backgroundColor: "var(--muted)" }}
+          />
+        )
     }
   }
 
-  const StatusBadge = ({ status }: { status: string }) => {
-    switch(status) {
-      case "pass": return <span className="bg-green-500/10 text-green-500 font-bold px-3 py-1 rounded-full text-xs">PASS</span>;
-      case "fail": return <span className="bg-red-500/10 text-red-500 font-bold px-3 py-1 rounded-full text-xs">FAIL</span>;
-      case "warn": return <span className="bg-yellow-500/10 text-yellow-500 font-bold px-3 py-1 rounded-full text-xs">WARN</span>;
-      case "running": return <span className="bg-primary/10 text-primary font-bold px-3 py-1 rounded-full text-xs animate-pulse">RUNNING</span>;
-      default: return <span className="bg-muted text-muted-foreground font-bold px-3 py-1 rounded-full text-xs">PENDING</span>;
-    }
+  const statusStyles: Record<string, React.CSSProperties> = {
+    pass: { backgroundColor: "var(--accent-green)", color: "#0a0a0a" },
+    fail: { backgroundColor: "var(--accent-red)", color: "#ffffff" },
+    warn: { backgroundColor: "var(--accent)", color: "#0a0a0a" },
+    running: { backgroundColor: "var(--accent-blue)", color: "#ffffff" },
+    pending: { backgroundColor: "var(--muted)", color: "var(--muted-foreground)" },
   }
+
+  const StatusBadge = ({ status }: { status: string }) => (
+    <span
+      className="px-3 py-1 text-[10px] font-black uppercase tracking-widest"
+      style={{
+        ...(statusStyles[status] || statusStyles.pending),
+        border: "1.5px solid var(--border-color)",
+        fontFamily: "var(--font-mono)",
+        display: "inline-block",
+      }}
+    >
+      {status.toUpperCase()}
+    </span>
+  )
+
+  const passCount = tests.filter((t) => t.status === "pass").length
+  const failCount = tests.filter((t) => t.status === "fail").length
 
   return (
-    <div className="bg-card border border-white/5 rounded-xl overflow-hidden flex flex-col">
-      <div className="bg-muted/30 px-6 py-4 border-b border-white/5 flex justify-between items-center">
-        <h2 className="font-semibold text-lg">Client & Runtime Executions</h2>
-        <button 
-          onClick={runAllTests} 
+    <div
+      style={{
+        backgroundColor: "var(--card)",
+        border: "2px solid var(--border-color)",
+        boxShadow: "var(--shadow)",
+        overflow: "hidden",
+      }}
+    >
+      {/* Header */}
+      <div
+        className="px-6 py-4 flex justify-between items-center"
+        style={{ borderBottom: "2px solid var(--border-color)", backgroundColor: "var(--muted)" }}
+      >
+        <div className="flex items-center gap-4">
+          <h2
+            className="font-black text-lg uppercase tracking-wide"
+            style={{ fontFamily: "var(--font-sans)" }}
+          >
+            Runtime Tests
+          </h2>
+          <div className="flex items-center gap-2">
+            {passCount > 0 && (
+              <span
+                className="px-2 py-0.5 text-[10px] font-black uppercase"
+                style={{
+                  backgroundColor: "var(--accent-green)",
+                  color: "#0a0a0a",
+                  border: "1.5px solid var(--border-color)",
+                  fontFamily: "var(--font-mono)",
+                }}
+              >
+                {passCount} PASS
+              </span>
+            )}
+            {failCount > 0 && (
+              <span
+                className="px-2 py-0.5 text-[10px] font-black uppercase"
+                style={{
+                  backgroundColor: "var(--accent-red)",
+                  color: "#fff",
+                  border: "1.5px solid var(--border-color)",
+                  fontFamily: "var(--font-mono)",
+                }}
+              >
+                {failCount} FAIL
+              </span>
+            )}
+          </div>
+        </div>
+        <button
+          id="run-tests-btn"
+          onClick={runAllTests}
           disabled={isRunning}
-          className="flex items-center space-x-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
+          className="nb-btn"
+          style={{ minWidth: "140px" }}
         >
           {isRunning ? <Loader2 className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4" />}
-          <span>{isRunning ? "Running..." : "Run Tests Again"}</span>
+          {isRunning ? "Running..." : "Run Tests"}
         </button>
       </div>
-      
+
+      {/* Test rows */}
       <div className="flex flex-col">
         {tests.map((test, idx) => (
-          <div key={idx} className="flex items-center justify-between p-4 border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors">
-            <div className="flex items-center space-x-4">
+          <div
+            key={idx}
+            className="flex items-center justify-between px-6 py-4"
+            style={{
+              borderBottom:
+                idx < tests.length - 1 ? "2px solid var(--border-color)" : "none",
+              backgroundColor:
+                test.status === "running"
+                  ? "var(--muted)"
+                  : "transparent",
+              transition: "background-color 100ms ease",
+            }}
+          >
+            <div className="flex items-center gap-4">
               <StatusIcon status={test.status} />
               <div className="flex flex-col">
-                <span className="font-medium">{test.name}</span>
-                <span className="text-xs text-muted-foreground mt-1">{test.description}</span>
+                <span
+                  className="font-black uppercase tracking-wide"
+                  style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem" }}
+                >
+                  {test.name}
+                </span>
+                <span
+                  className="text-xs mt-0.5"
+                  style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
+                >
+                  {test.description}
+                </span>
                 {test.error && (
-                  <span className="text-xs text-red-400 mt-2 max-w-lg font-mono truncate">{test.error}</span>
+                  <span
+                    className="text-xs mt-1.5 px-2 py-1 max-w-lg truncate"
+                    style={{
+                      color: "var(--accent-red)",
+                      fontFamily: "var(--font-mono)",
+                      backgroundColor: "var(--muted)",
+                      border: "1.5px solid var(--accent-red)",
+                    }}
+                  >
+                    {test.error}
+                  </span>
                 )}
               </div>
             </div>
-            
-            <div className="flex items-center gap-6 text-sm">
-              <span className="font-mono text-muted-foreground">
-                {test.duration !== undefined ? `${test.duration.toFixed(2)}ms` : '-'}
+
+            <div className="flex items-center gap-6">
+              <span
+                className="font-black"
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.85rem",
+                  color: test.duration !== undefined ? "var(--accent-green)" : "var(--muted-foreground)",
+                  minWidth: "80px",
+                  textAlign: "right",
+                }}
+              >
+                {test.duration !== undefined ? `${test.duration.toFixed(2)}ms` : "—"}
               </span>
-              <div className="w-20 flex justify-end">
+              <div style={{ minWidth: "80px", display: "flex", justifyContent: "flex-end" }}>
                 <StatusBadge status={test.status} />
               </div>
             </div>

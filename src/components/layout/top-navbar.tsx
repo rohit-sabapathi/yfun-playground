@@ -15,48 +15,105 @@ export function TopNavbar() {
   useEffect(() => setMounted(true), [])
 
   return (
-    <header className="h-16 border-b border-border/50 bg-background/80 backdrop-blur-xl flex items-center justify-between px-6 sticky top-0 z-10 flex-shrink-0">
+    <header
+      className="h-16 flex items-center justify-between px-4 sticky top-0 z-10 flex-shrink-0"
+      style={{
+        backgroundColor: "var(--card)",
+        borderBottom: "2px solid var(--border-color)",
+      }}
+    >
+      {/* Search bar */}
       <div className="flex-1 max-w-xl">
-        <div className="relative group">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
+        <div className="relative">
+          <Search
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
+            style={{ color: "var(--muted-foreground)" }}
+          />
           <input
+            id="ticker-search"
             type="text"
-            placeholder="Search tickers, commands, or data..."
-            className="w-full h-10 bg-white/5 border border-white/10 rounded-md pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-muted-foreground uppercase"
+            placeholder="   Search tickers, commands..."
+            className="nb-input pl-10 pr-20 h-10 uppercase text-sm font-mono"
+            style={{ fontFamily: "var(--font-mono)" }}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                const target = e.target as HTMLInputElement;
+              if (e.key === "Enter") {
+                const target = e.target as HTMLInputElement
                 if (target.value.trim()) {
-                  setSelectedTicker(target.value.trim().toUpperCase());
+                  setSelectedTicker(target.value.trim().toUpperCase())
+                  target.value = ""
                 }
               }
             }}
           />
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
-            <kbd className="hidden sm:inline-flex h-5 items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-              <span className="text-xs">⌘</span>K
-            </kbd>
-          </div>
+          <kbd
+            className="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-bold uppercase"
+            style={{
+              fontFamily: "var(--font-mono)",
+              border: "1.5px solid var(--border-color)",
+              backgroundColor: "var(--muted)",
+              color: "var(--muted-foreground)",
+            }}
+          >
+            ⌘K
+          </kbd>
         </div>
       </div>
 
-      <div className="flex items-center gap-4 ml-4">
+      {/* Right side */}
+      <div className="flex items-center gap-3 ml-4">
+        {/* Active ticker badge */}
         {selectedTicker && (
-          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-xs text-muted-foreground">Active Ticker:</span>
-            <span className="text-sm font-bold text-primary">{selectedTicker}</span>
+          <div
+            className="hidden md:flex items-center gap-2 px-3 py-1.5"
+            style={{
+              border: "2px solid var(--border-color)",
+              backgroundColor: "var(--accent)",
+              boxShadow: "2px 2px 0px var(--border-color)",
+            }}
+          >
+            <span
+              className="text-[10px] font-bold uppercase tracking-widest"
+              style={{ color: "#0a0a0a", fontFamily: "var(--font-mono)" }}
+            >
+              Active:
+            </span>
+            <span
+              className="text-sm font-black tracking-wider"
+              style={{ color: "#0a0a0a", fontFamily: "var(--font-mono)" }}
+            >
+              {selectedTicker}
+            </span>
           </div>
         )}
-        
+
+        {/* Theme toggle */}
         <button
+          id="theme-toggle"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors"
           aria-label="Toggle theme"
+          className="w-10 h-10 flex items-center justify-center transition-all duration-75"
+          style={{
+            border: "2px solid var(--border-color)",
+            backgroundColor: "var(--card)",
+            boxShadow: "2px 2px 0px var(--border-color)",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translate(-1px, -1px)"
+            e.currentTarget.style.boxShadow = "3px 3px 0px var(--border-color)"
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translate(0, 0)"
+            e.currentTarget.style.boxShadow = "2px 2px 0px var(--border-color)"
+          }}
+          onMouseDown={(e) => {
+            e.currentTarget.style.transform = "translate(2px, 2px)"
+            e.currentTarget.style.boxShadow = "none"
+          }}
         >
           {mounted && theme === "dark" ? (
-            <Sun className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+            <Sun className="w-4 h-4" style={{ color: "var(--foreground)" }} />
           ) : (
-            <Moon className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+            <Moon className="w-4 h-4" style={{ color: "var(--foreground)" }} />
           )}
         </button>
       </div>

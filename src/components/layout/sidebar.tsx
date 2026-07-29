@@ -39,41 +39,120 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="w-64 h-screen border-r border-border/50 bg-background/80 backdrop-blur-xl flex flex-col sticky top-0 flex-shrink-0">
-      <div className="p-6 border-b border-border/50">
-        <h1 className="text-xl font-bold tracking-tight text-foreground flex items-center gap-2">
-          <Terminal className="w-5 h-5 text-primary" />
-          yfun-api Terminal
-        </h1>
+    <aside
+      className="w-64 h-screen flex flex-col sticky top-0 flex-shrink-0"
+      style={{
+        backgroundColor: "var(--card)",
+        borderRight: "2px solid var(--border-color)",
+      }}
+    >
+      {/* Logo */}
+      <div
+        className="p-5 flex items-center gap-3"
+        style={{ borderBottom: "2px solid var(--border-color)" }}
+      >
+        <div
+          className="w-9 h-9 flex items-center justify-center"
+          style={{
+            backgroundColor: "var(--accent)",
+            border: "2px solid var(--border-color)",
+            boxShadow: "2px 2px 0px var(--border-color)",
+          }}
+        >
+          <Terminal className="w-5 h-5" style={{ color: "#0a0a0a" }} />
+        </div>
+        <div>
+          <h1
+            className="text-base font-bold leading-none tracking-tight"
+            style={{ fontFamily: "var(--font-sans)" }}
+          >
+            yfun-api
+          </h1>
+          <p
+            className="text-[10px] uppercase tracking-widest mt-0.5"
+            style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-mono)" }}
+          >
+            Terminal
+          </p>
+        </div>
       </div>
-      
-      <nav className="flex-1 overflow-y-auto p-4 space-y-1 custom-scrollbar">
+
+      {/* Navigation */}
+      <nav className="flex-1 overflow-y-auto nb-scroll p-3 space-y-0.5">
         {sidebarLinks.map((link) => {
           const isActive = pathname === link.href
           const Icon = link.icon
-          
+
           return (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200",
-                isActive 
-                  ? "bg-primary/10 text-primary" 
-                  : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
+                "flex items-center gap-3 px-3 py-2.5 text-sm font-semibold transition-all duration-75",
+                "uppercase tracking-wide"
               )}
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "0.75rem",
+                letterSpacing: "0.04em",
+                ...(isActive
+                  ? {
+                      backgroundColor: "var(--accent)",
+                      color: "#0a0a0a",
+                      border: "2px solid var(--border-color)",
+                      boxShadow: "2px 2px 0px var(--border-color)",
+                    }
+                  : {
+                      backgroundColor: "transparent",
+                      color: "var(--muted-foreground)",
+                      border: "2px solid transparent",
+                    }),
+              }}
+              onMouseEnter={(e) => {
+                if (!isActive) {
+                  e.currentTarget.style.backgroundColor = "var(--muted)"
+                  e.currentTarget.style.color = "var(--foreground)"
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isActive) {
+                  e.currentTarget.style.backgroundColor = "transparent"
+                  e.currentTarget.style.color = "var(--muted-foreground)"
+                }
+              }}
             >
-              <Icon className="w-4 h-4" />
+              <Icon className="w-4 h-4 flex-shrink-0" />
               {link.name}
             </Link>
           )
         })}
       </nav>
-      
-      <div className="p-4 border-t border-border/50 text-xs text-muted-foreground flex justify-between items-center">
-        <span>v0.1.0-alpha</span>
-        <span className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+
+      {/* Footer */}
+      <div
+        className="p-3 flex justify-between items-center"
+        style={{
+          borderTop: "2px solid var(--border-color)",
+          backgroundColor: "var(--muted)",
+          fontFamily: "var(--font-mono)",
+          fontSize: "0.65rem",
+        }}
+      >
+        <span
+          className="font-bold uppercase tracking-widest px-2 py-1"
+          style={{ border: "1.5px solid var(--border-color)", backgroundColor: "var(--card)" }}
+        >
+          v0.1.0-alpha
+        </span>
+        <span className="flex items-center gap-1.5 uppercase tracking-wider text-[0.6rem] font-bold">
+          <span
+            className="w-2 h-2"
+            style={{
+              backgroundColor: "var(--accent-green)",
+              border: "1px solid var(--border-color)",
+              display: "inline-block",
+            }}
+          />
           Connected
         </span>
       </div>

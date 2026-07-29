@@ -14,53 +14,64 @@ import { HistoricalDataTable } from "@/components/historical/data-table"
 
 export default function HistoricalPage() {
   const { selectedTicker } = usePlayground()
-  
+
   const [options, setOptions] = useState<HistoryOptions>({
     period: "1mo",
     interval: "1d",
     autoAdjust: true,
     backAdjust: false,
-    prepost: false
-  });
-  const [compareBenchmark, setCompareBenchmark] = useState(false);
+    prepost: false,
+  })
+  const [compareBenchmark, setCompareBenchmark] = useState(false)
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['historical', selectedTicker, options, compareBenchmark],
+    queryKey: ["historical", selectedTicker, options, compareBenchmark],
     queryFn: () => fetchHistoricalData(selectedTicker!, options, compareBenchmark),
     enabled: !!selectedTicker,
     refetchOnWindowFocus: false,
   })
 
   const exportCSV = () => {
-    if (!data?.tickerData) return;
-    const header = "Date,Open,High,Low,Close,Volume\n";
-    const rows = data.tickerData.map(d => `${new Date(d.date).toISOString()},${d.open},${d.high},${d.low},${d.close},${d.volume}`).join("\n");
-    const blob = new Blob([header + rows], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${selectedTicker}_history.csv`;
-    a.click();
-  };
+    if (!data?.tickerData) return
+    const header = "Date,Open,High,Low,Close,Volume\n"
+    const rows = data.tickerData
+      .map((d) => `${new Date(d.date).toISOString()},${d.open},${d.high},${d.low},${d.close},${d.volume}`)
+      .join("\n")
+    const blob = new Blob([header + rows], { type: "text/csv" })
+    const url = window.URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = url
+    a.download = `${selectedTicker}_history.csv`
+    a.click()
+  }
 
   const exportJSON = () => {
-    if (!data?.tickerData) return;
-    const blob = new Blob([JSON.stringify(data.tickerData, null, 2)], { type: 'application/json' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${selectedTicker}_history.json`;
-    a.click();
-  };
+    if (!data?.tickerData) return
+    const blob = new Blob([JSON.stringify(data.tickerData, null, 2)], { type: "application/json" })
+    const url = window.URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = url
+    a.download = `${selectedTicker}_history.json`
+    a.click()
+  }
 
   if (!selectedTicker) {
     return (
       <div className="p-8 h-full flex flex-col items-center justify-center text-center">
-        <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-          <Search className="w-8 h-8 text-primary" />
+        <div
+          className="w-16 h-16 flex items-center justify-center mb-5"
+          style={{
+            backgroundColor: "var(--accent)",
+            border: "2px solid var(--border-color)",
+            boxShadow: "var(--shadow)",
+          }}
+        >
+          <Search className="w-8 h-8" style={{ color: "#0a0a0a" }} />
         </div>
-        <h2 className="text-2xl font-bold mb-2">No Ticker Selected</h2>
-        <p className="text-muted-foreground max-w-md">
+        <h2 className="text-2xl font-black mb-2" style={{ fontFamily: "var(--font-sans)" }}>
+          No Ticker Selected
+        </h2>
+        <p style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}>
           Use the search bar in the top navigation to select a ticker and explore its historical data.
         </p>
       </div>
@@ -68,98 +79,157 @@ export default function HistoricalPage() {
   }
 
   return (
-    <div className="p-8 max-w-7xl mx-auto space-y-6">
-      <div className="mb-6 flex items-end justify-between">
+    <div className="p-6 max-w-7xl mx-auto space-y-6">
+      {/* Page header */}
+      <div className="flex items-end justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight mb-2 flex items-center gap-3">
-            <span className="text-primary">{selectedTicker}</span> Historical Data
+          <div
+            className="inline-block px-3 py-1 mb-3"
+            style={{
+              backgroundColor: "var(--accent)",
+              border: "2px solid var(--border-color)",
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.7rem",
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: "0.12em",
+              color: "#0a0a0a",
+            }}
+          >
+            Historical Data
+          </div>
+          <h1 className="text-4xl font-black tracking-tight mb-2" style={{ fontFamily: "var(--font-sans)" }}>
+            <span style={{ color: "var(--accent-blue)" }}>{selectedTicker}</span> History
           </h1>
-          <p className="text-muted-foreground">
-            Analyze historical price data with advanced options fetched via yfun-api
+          <p style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}>
+            Analyze historical price data fetched via yfun-api
           </p>
         </div>
-        
-        <div className="flex space-x-3">
-          <button 
+
+        {/* Export buttons */}
+        <div className="flex gap-2">
+          <button
+            id="export-csv-btn"
             onClick={exportCSV}
             disabled={!data?.tickerData || data.tickerData.length === 0}
-            className="flex items-center space-x-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
+            className="nb-btn"
+            style={{ backgroundColor: "var(--card)", color: "var(--foreground)" }}
           >
             <Download className="w-4 h-4" />
-            <span>CSV</span>
+            CSV
           </button>
-          <button 
+          <button
+            id="export-json-btn"
             onClick={exportJSON}
             disabled={!data?.tickerData || data.tickerData.length === 0}
-            className="flex items-center space-x-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
+            className="nb-btn"
+            style={{ backgroundColor: "var(--card)", color: "var(--foreground)" }}
           >
             <Download className="w-4 h-4" />
-            <span>JSON</span>
+            JSON
           </button>
         </div>
       </div>
 
-      <HistoricalControls 
-        options={options} 
-        setOptions={setOptions} 
-        compareBenchmark={compareBenchmark} 
-        setCompareBenchmark={setCompareBenchmark} 
+      {/* Controls */}
+      <HistoricalControls
+        options={options}
+        setOptions={setOptions}
+        compareBenchmark={compareBenchmark}
+        setCompareBenchmark={setCompareBenchmark}
       />
 
+      {/* Loading */}
       {isLoading && (
         <div className="py-12 flex flex-col items-center justify-center">
-          <Loader2 className="w-8 h-8 text-primary animate-spin mb-4" />
-          <p className="text-muted-foreground animate-pulse">Fetching historical data for {selectedTicker}...</p>
+          <div
+            className="w-14 h-14 flex items-center justify-center mb-4"
+            style={{
+              backgroundColor: "var(--accent-blue)",
+              border: "2px solid var(--border-color)",
+              boxShadow: "var(--shadow)",
+            }}
+          >
+            <Loader2 className="w-7 h-7 text-white animate-spin" />
+          </div>
+          <p
+            className="font-bold uppercase tracking-wide"
+            style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "var(--muted-foreground)" }}
+          >
+            Fetching historical data for {selectedTicker}...
+          </p>
         </div>
       )}
 
+      {/* Error */}
       {error && (
-        <div className="p-8 flex flex-col items-center justify-center border border-red-500/20 bg-red-500/5 rounded-xl">
-          <AlertTriangle className="w-8 h-8 text-red-500 mb-4" />
-          <h2 className="text-xl font-bold mb-2 text-red-500">Error Fetching Data</h2>
-          <p className="text-muted-foreground text-center">
+        <div
+          className="p-6 flex flex-col items-center justify-center"
+          style={{
+            border: "2px solid var(--accent-red)",
+            backgroundColor: "var(--card)",
+            boxShadow: "4px 4px 0px var(--accent-red)",
+          }}
+        >
+          <AlertTriangle className="w-8 h-8 mb-3" style={{ color: "var(--accent-red)" }} />
+          <h2 className="text-lg font-black mb-1" style={{ color: "var(--accent-red)", fontFamily: "var(--font-sans)" }}>
+            Error Fetching Data
+          </h2>
+          <p style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}>
             {(error as Error).message}
           </p>
         </div>
       )}
 
+      {/* Data */}
       {!isLoading && !error && data && data.tickerData.length > 0 && (
         <div className="space-y-6">
           <HistoricalStatistics data={data.tickerData} benchmarkData={data.benchmarkData} />
-          
           <HistoricalChart data={data.tickerData} benchmarkData={data.benchmarkData} />
-          
           <HistoricalDataTable data={data.tickerData} />
-          
+
+          {/* Meta info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-white/5 rounded-xl overflow-hidden flex flex-col">
-              <div className="bg-muted/50 px-4 py-3 border-b border-white/5 text-sm font-medium flex justify-between">
-                <span>Execution Time</span>
-              </div>
-              <div className="p-4 text-mono text-sm text-green-400">
+            <div style={{ border: "2px solid var(--border-color)", backgroundColor: "var(--card)", boxShadow: "var(--shadow-sm)" }}>
+              <div className="nb-section-header">Execution Time</div>
+              <div
+                className="p-4 text-xl font-black"
+                style={{ fontFamily: "var(--font-mono)", color: "var(--accent-green)" }}
+              >
                 {data.executionTime}ms
               </div>
             </div>
-            
-            <div className="bg-card border border-white/5 rounded-xl overflow-hidden flex flex-col">
-              <div className="bg-muted/50 px-4 py-3 border-b border-white/5 text-sm font-medium flex justify-between">
-                <span>Request Options</span>
-              </div>
-              <div className="p-4 text-mono text-sm text-muted-foreground overflow-auto max-h-48">
-                <pre>{JSON.stringify(options, null, 2)}</pre>
+            <div style={{ border: "2px solid var(--border-color)", backgroundColor: "var(--card)", boxShadow: "var(--shadow-sm)" }}>
+              <div className="nb-section-header">Request Options</div>
+              <div className="p-4 overflow-auto max-h-48 nb-scroll">
+                <pre
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.78rem",
+                    color: "var(--muted-foreground)",
+                  }}
+                >
+                  {JSON.stringify(options, null, 2)}
+                </pre>
               </div>
             </div>
           </div>
         </div>
       )}
 
+      {/* No data */}
       {!isLoading && !error && data && data.tickerData.length === 0 && (
-         <div className="p-8 flex flex-col items-center justify-center border border-white/5 rounded-xl text-center">
-         <h2 className="text-xl font-bold mb-2">No Data Available</h2>
-         <p className="text-muted-foreground">
-           The selected options returned no data. Try changing the period or interval.
-         </p>
-       </div>
+        <div
+          className="p-8 flex flex-col items-center justify-center text-center"
+          style={{ border: "2px solid var(--border-color)", backgroundColor: "var(--card)", boxShadow: "var(--shadow)" }}
+        >
+          <h2 className="text-xl font-black mb-2" style={{ fontFamily: "var(--font-sans)" }}>
+            No Data Available
+          </h2>
+          <p style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}>
+            The selected options returned no data. Try changing the period or interval.
+          </p>
+        </div>
       )}
     </div>
   )

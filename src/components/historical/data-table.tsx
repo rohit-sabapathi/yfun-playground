@@ -1,41 +1,109 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { format } from "date-fns";
+import { format } from "date-fns"
 
 interface DataTableProps {
-  data: any[];
+  data: any[]
 }
 
 export function HistoricalDataTable({ data }: DataTableProps) {
-  if (!data || data.length === 0) return null;
+  if (!data || data.length === 0) return null
 
   return (
-    <div className="rounded-xl border border-white/5 bg-card overflow-hidden">
-      <div className="max-h-[500px] overflow-auto">
-        <table className="w-full text-sm text-left">
-          <thead className="text-xs uppercase bg-muted/50 text-muted-foreground sticky top-0 backdrop-blur-md">
+    <div
+      style={{
+        border: "2px solid var(--border-color)",
+        backgroundColor: "var(--card)",
+        boxShadow: "var(--shadow-sm)",
+        overflow: "hidden",
+      }}
+    >
+      <div className="nb-section-header">Price History Table</div>
+      <div className="max-h-[500px] overflow-auto nb-scroll">
+        <table className="w-full text-sm text-left" style={{ borderCollapse: "collapse" }}>
+          <thead
+            style={{
+              position: "sticky",
+              top: 0,
+              backgroundColor: "var(--muted)",
+              zIndex: 1,
+            }}
+          >
             <tr>
-              <th className="px-4 py-3 font-medium">Date</th>
-              <th className="px-4 py-3 font-medium text-right">Open</th>
-              <th className="px-4 py-3 font-medium text-right">High</th>
-              <th className="px-4 py-3 font-medium text-right">Low</th>
-              <th className="px-4 py-3 font-medium text-right">Close</th>
-              <th className="px-4 py-3 font-medium text-right">Volume</th>
+              {["Date", "Open", "High", "Low", "Close", "Volume"].map((col, i) => (
+                <th
+                  key={col}
+                  className="px-4 py-3"
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.65rem",
+                    fontWeight: 900,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    color: "var(--muted-foreground)",
+                    borderBottom: "2px solid var(--border-color)",
+                    textAlign: i > 0 ? "right" : "left",
+                  }}
+                >
+                  {col}
+                </th>
+              ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/5">
+          <tbody>
             {data.map((row, idx) => (
-              <tr key={idx} className="hover:bg-muted/50 transition-colors">
-                <td className="px-4 py-2 font-mono">{format(new Date(row.date), 'yyyy-MM-dd HH:mm')}</td>
-                <td className="px-4 py-2 text-right">{row.open?.toFixed(4) ?? "-"}</td>
-                <td className="px-4 py-2 text-right">{row.high?.toFixed(4) ?? "-"}</td>
-                <td className="px-4 py-2 text-right">{row.low?.toFixed(4) ?? "-"}</td>
-                <td className="px-4 py-2 text-right font-medium text-primary">{row.close?.toFixed(4) ?? "-"}</td>
-                <td className="px-4 py-2 text-right text-muted-foreground">{row.volume?.toLocaleString() ?? "-"}</td>
+              <tr
+                key={idx}
+                style={{
+                  borderBottom: "1.5px solid var(--border-color)",
+                  backgroundColor: idx % 2 === 0 ? "var(--card)" : "var(--muted)",
+                  transition: "background-color 60ms ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--accent)")}
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = idx % 2 === 0 ? "var(--card)" : "var(--muted)")
+                }
+              >
+                <td
+                  className="px-4 py-2"
+                  style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "var(--foreground)" }}
+                >
+                  {format(new Date(row.date), "yyyy-MM-dd HH:mm")}
+                </td>
+                <td
+                  className="px-4 py-2 text-right"
+                  style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "var(--foreground)" }}
+                >
+                  {row.open?.toFixed(4) ?? "-"}
+                </td>
+                <td
+                  className="px-4 py-2 text-right"
+                  style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "var(--accent-green)" }}
+                >
+                  {row.high?.toFixed(4) ?? "-"}
+                </td>
+                <td
+                  className="px-4 py-2 text-right"
+                  style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "var(--accent-red)" }}
+                >
+                  {row.low?.toFixed(4) ?? "-"}
+                </td>
+                <td
+                  className="px-4 py-2 text-right font-black"
+                  style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "var(--accent-blue)" }}
+                >
+                  {row.close?.toFixed(4) ?? "-"}
+                </td>
+                <td
+                  className="px-4 py-2 text-right"
+                  style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "var(--muted-foreground)" }}
+                >
+                  {row.volume?.toLocaleString() ?? "-"}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
     </div>
-  );
+  )
 }
