@@ -100,7 +100,7 @@ export default function RegressionPage() {
         <div className="py-24 text-center border border-white/5 rounded-xl bg-card">
           <ShieldAlert className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-50" />
           <h2 className="text-lg font-medium">Ready to run regression suite</h2>
-          <p className="text-muted-foreground mt-1">Click "Run Regression" to compare live API responses against local golden snapshots.</p>
+          <p className="text-muted-foreground mt-1">Click &quot;Run Regression&quot; to compare live API responses against local golden snapshots.</p>
         </div>
       )}
 

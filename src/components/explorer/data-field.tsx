@@ -1,5 +1,24 @@
 import { Clock, Code, Database, Braces } from "lucide-react"
 
+const MetaBadge = ({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) => (
+  <div
+    className="flex items-center gap-1 px-1.5 py-0.5"
+    style={{
+      border: "1.5px solid var(--border-color)",
+      backgroundColor: "var(--muted)",
+      fontFamily: "var(--font-mono)",
+      fontSize: "0.65rem",
+      color: "var(--muted-foreground)",
+      fontWeight: 700,
+      textTransform: "uppercase" as const,
+      letterSpacing: "0.06em",
+    }}
+  >
+    <Icon className="w-2.5 h-2.5" />
+    {children}
+  </div>
+)
+
 interface DataFieldProps {
   fieldName: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -64,25 +83,6 @@ export function DataField({
       )
     return String(val)
   }
-
-  const MetaBadge = ({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) => (
-    <div
-      className="flex items-center gap-1 px-1.5 py-0.5"
-      style={{
-        border: "1.5px solid var(--border-color)",
-        backgroundColor: "var(--muted)",
-        fontFamily: "var(--font-mono)",
-        fontSize: "0.65rem",
-        color: "var(--muted-foreground)",
-        fontWeight: 700,
-        textTransform: "uppercase",
-        letterSpacing: "0.06em",
-      }}
-    >
-      <Icon className="w-2.5 h-2.5" />
-      {children}
-    </div>
-  )
 
   return (
     <div

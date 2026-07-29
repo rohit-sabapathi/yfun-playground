@@ -8,25 +8,15 @@ interface ControlsProps {
   setCompareBenchmark: (val: boolean) => void
 }
 
-export function HistoricalControls({ options, setOptions, compareBenchmark, setCompareBenchmark }: ControlsProps) {
-  const periods = ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]
-  const intervals = ["1m", "2m", "5m", "15m", "30m", "60m", "90m", "1h", "1d", "5d", "1wk", "1mo", "3mo"]
+interface NbCheckboxProps {
+  id: string
+  checked: boolean
+  onChange: (val: boolean) => void
+  label: string
+}
 
-  const updateOption = (key: keyof HistoryOptions, value: any) => {
-    setOptions({ ...options, [key]: value })
-  }
-
-  const NbCheckbox = ({
-    id,
-    checked,
-    onChange,
-    label,
-  }: {
-    id: string
-    checked: boolean
-    onChange: (val: boolean) => void
-    label: string
-  }) => (
+function NbCheckbox({ id, checked, onChange, label }: NbCheckboxProps) {
+  return (
     <label
       htmlFor={id}
       className="flex items-center gap-2 cursor-pointer"
@@ -55,6 +45,15 @@ export function HistoricalControls({ options, setOptions, compareBenchmark, setC
       </span>
     </label>
   )
+}
+
+export function HistoricalControls({ options, setOptions, compareBenchmark, setCompareBenchmark }: ControlsProps) {
+  const periods = ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]
+  const intervals = ["1m", "2m", "5m", "15m", "30m", "60m", "90m", "1h", "1d", "5d", "1wk", "1mo", "3mo"]
+
+  const updateOption = (key: keyof HistoryOptions, value: any) => {
+    setOptions({ ...options, [key]: value })
+  }
 
   return (
     <div
