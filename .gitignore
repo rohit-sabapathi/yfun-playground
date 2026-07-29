@@ -112,7 +112,3 @@ dist
 # Mac OS files
 .DS_Store
 
-# Project specific
-docs/sample-output.json
-*.mjs
-robust-replace.js
